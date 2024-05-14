@@ -29,14 +29,14 @@ public class UserController {
     }
 
     @GetMapping("/edit")
-    public String editUser(Long id, ModelMap model) {
-        model.addAttribute("user", userService.getUserById(id));
-        return "web";
+    public String showEditUserForm(@RequestParam long id, ModelMap model) {
+        User user = userService.getUserById(id);
+        model.addAttribute("user", user);
+        return "edit_user";
     }
 
     @PostMapping("/addUser")
     public String addUser(@ModelAttribute User user) {
-        System.out.println("ПРИВЕТ");
         userService.saveUser(user);
         return "redirect:/";
     }
@@ -45,6 +45,6 @@ public class UserController {
     public String updateUser(@ModelAttribute User user, @RequestParam long id) {
         user.setId(id);
         userService.updateUser(user);
-        return "edit_user";
+        return "redirect:/";
     }
 }
