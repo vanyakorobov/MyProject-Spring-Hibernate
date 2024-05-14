@@ -35,19 +35,6 @@ public class DatabaseConfig {
         dataSource.setDriverClassName(env.getRequiredProperty("db.driver"));
         dataSource.setUsername(env.getRequiredProperty("db.username"));
         dataSource.setPassword(env.getRequiredProperty("db.password"));
-
-        //dataSource.setInitialSize(Integer.valueOf(
-        //        env.getRequiredProperty("db.initialSize")));
-        //dataSource.setMaxIdle(Integer.valueOf(
-        //        env.getRequiredProperty("db.minIdle")));
-        //dataSource.setMinIdle(Integer.valueOf(
-        //        env.getRequiredProperty("db.maxIdle")));
-        //dataSource.setTimeBetweenEvictionRunsMillis(Long.valueOf(
-        //        env.getRequiredProperty("db.timeBetweenEvictionRunMills")));
-        //dataSource.setMinEvictableIdleTimeMillis(Long.valueOf(
-        //        env.getRequiredProperty("db.minEvictableIdTimeMills")));
-        //dataSource.setTestOnBorrow(Boolean.valueOf(
-        //        env.getRequiredProperty("db.testOnBorrow")));
         return dataSource;
     }
 
